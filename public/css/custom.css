@@ -1,0 +1,134 @@
+#products{
+		padding: 50px;
+}
+
+#products .container {
+	padding: 50px;
+}
+
+.product-img {
+	height: 100%;
+	width: 100%;
+	z-index:0;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .6s ease;
+	background-color: #FFA366;
+}
+
+.hover-caption {
+	color:white;
+	top: 50%;
+	left:50%;
+	position:absolute;
+	text-align:center;
+	transform: translate(-50%, -50%);
+}
+
+.grow {
+	transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+	transform: scale(1.1);
+	box-shadow: 0px 10px 11px 4px #C7C7C7;
+	z-index: 1;
+}
+
+.grow:hover .overlay {
+	opacity: 0.7;
+}
+
+.card{
+	margin-top:30px;
+}
+
+.pic1{
+	/* width:400px;
+	height:217px; */
+  height:200px;
+  width:200px;
+  margin-bottom:100px;
+	background: url(http://placehold.it/200x200) no-repeat;
+}
+.text1{
+	/* width:340px;
+	height:217px; */
+  width:200px;
+  height:200px;
+	background:#FFF;
+	opacity:0;
+}
+.pic1:hover .text1
+{
+	opacity:0.6;
+	text-align:center;
+	color:#000000;
+	padding:30px;
+}
+
+#carouselExampleIndicators2 .carousel-item {
+    height:200px;
+}
+
+.bg-yellow {
+	background-color: #FFF105 !important;
+}
+
+hr {
+	border-color: white;
+}
+
+.navbar {
+	transition: 500ms ease;
+	
+}
+
+.scrolled {
+	background: white !important;
+}
+
+#about {
+	height: 100vh;
+	background-color: #FFA366;
+	/* background-color: #FFC600; */
+}
+
+#about .container {
+	background-color: #FFF105;
+	padding: 5%;
+	margin-top:20px;
+}
+
+.section-title {
+	letter-spacing: 2px;
+	border-bottom: 4px solid white;
+	border-left: 4px solid white;
+	padding-left: 10px;
+}
+
+.section-title-inv {
+	letter-spacing: 2px;
+	border-bottom: 4px solid #FFF105;
+	border-left: 4px solid #FFF105;
+	padding-left: 10px;
+}
+
+#contact {
+	height:100vh;
+}
+
+#contact .container {
+	padding: 5%;
+}
+
+
