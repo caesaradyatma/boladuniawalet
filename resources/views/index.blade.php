@@ -10,27 +10,27 @@
             </ol>
             <div class="carousel-inner" role="listbox">
             <!-- Slide One - Set the background image for this slide in the line below -->
-            <div class="carousel-item active" style="background-image: url('{{ asset('img/Product/banyak2.jpg') }}');">
+            <div class="carousel-item active" style="background-image: url('{{ asset('img/Product/banyak2-min.jpg') }}');">
                 <div class="carousel-caption d-none d-md-block">
                 <h3>First Slide</h3>
                 <p>This is a description for the first slide.</p>
                 </div>
             </div>
             <!-- Slide Two - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('{{ asset('img/Pudding/slide2.jpg' )}}');">
+            <div class="carousel-item" style="background-image: url('{{ asset('img/Pudding/brown-slide.jpg' )}}');">
                 <div class="carousel-caption d-none d-md-block">
                 <h3>Second Slide</h3>
                 <p>This is a description for the second slide.</p>
                 </div>
             </div>
             <!-- Slide Three - Set the background image for this slide in the line below -->
-            <div class="carousel-item" style="background-image: url('{{ asset('img/Powder/powderslide.jpg' )}}');">
+            <div class="carousel-item" style="background-image: url('{{ asset('img/Powder/powderslide-min.jpg' )}}');">
                 <div class="carousel-caption d-none d-md-block">
                 <h3>Third Slide</h3>
                 <p>This is a description for the third slide.</p>
                 </div>
             </div>
-            <div class="carousel-item" style="background-image: url('{{ asset('img/Pudding/slide4.jpg' )}}');">
+            <div class="carousel-item" style="background-image: url('{{ asset('img/Pudding/bright-slide.jpg' )}}');">
                 <div class="carousel-caption d-none d-md-block">
                 <h3>Fourth Slide</h3>
                 <p>This is a description for the fourth slide.</p>
@@ -82,70 +82,19 @@
             <h1 class="section-title-inv">products</h1>
             <hr>
           </div>
-          <!-- <div class="col-sm-3"></div> -->
-          <div class="col-sm-4 grow">
-            <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" data-whatever="Product 1">
-              <img class="product-img" src="img/Product/product1.jpg" alt="Card image cap">
-              <div class="overlay">
-                <div class="hover-caption">
-                  Product 1
+          @foreach ($products as $product)
+            <div class="col-sm-4 grow">
+              <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" data-name="{{$product->name}}">
+                <img class="product-img" src="{{asset('img/Product/'.$product->images_id.'-min.jpg')}}" alt="Card image cap">
+                <div class="overlay">
+                  <div class="hover-caption">
+                    Product 1
+                  </div>
                 </div>
-              </div>
-            </a>
-          </div>
-          <!-- <div class="col-sm-3"></div> -->
-          <div class="col-sm-4 grow">
-            <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" data-whatever="Product 2">
-              <img class="product-img" src="img/Product/product2.jpg" alt="Card image cap">
-              <div class="overlay">
-                <div class="hover-caption">
-                  Product 2
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-4 grow">
-            <a href="#">
-              <img class="product-img" src="img/Product/product3.jpg" alt="Card image cap">
-              <div class="overlay">
-                <div class="hover-caption">
-                  Product 3
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-4 grow"> 
-            <a href="#">
-              <img class="product-img grow" src="img/Product/product4.jpg" alt="Card image cap">
-              <div class="overlay">
-                <div class="hover-caption">
-                  Product 4
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- <div class="col-sm-2"></div> -->
-          <div class="col-sm-4 grow"> 
-            <a href="#">
-              <img class="product-img grow" src="img/Product/product5.jpg" alt="Card image cap">
-              <div class="overlay">
-                <div class="hover-caption">
-                  Product 5
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-sm-4 grow">
-            <a href="#">
-              <img class="product-img" src="img/Product/product6.jpg" alt="Card image cap">
-              <div class="overlay">
-                <div class="hover-caption">
-                  Product 6
-                </div>
-              </div>
-            </a>
-          </div>
-          <!-- <div class="col-sm-2"></div> -->
+              </a>
+            </div>
+          @endforeach
+          
         </div>
       </div>
     </section>
@@ -226,41 +175,6 @@
       $('.carousel').carousel({
         interval: 2200
       })
-      // Select all links with hashes
-      $('a[href*="#"]')
-      // Remove links that don't actually link to anything
-      .not('[href="#"]')
-      .not('[href="#0"]')
-      .click(function(event) {
-        // On-page links
-        if (
-          location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-          && 
-          location.hostname == this.hostname
-        ) {
-          // Figure out element to scroll to
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          // Does a scroll target exist?
-          if (target.length) {
-            // Only prevent default if animation is actually gonna happen
-            event.preventDefault();
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 1000, function() {
-              // Callback after animation
-              // Must change focus!
-              var $target = $(target);
-              $target.focus();
-              if ($target.is(":focus")) { // Checking if the target was focused
-                return false;
-              } else {
-                $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-                $target.focus(); // Set focus again
-              };
-            });
-          }
-        }
-      });
+      
     </script>
 @endsection
