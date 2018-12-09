@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-yellow">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="img/logo/logo.png" width="8%" height="8%"  alt="">Bola Dunia Walet</a>
+        <a class="navbar-brand" href="#"><img class="logo" src="{{ asset('/img/logo/logo.png') }}" alt="">Bola Dunia Walet</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

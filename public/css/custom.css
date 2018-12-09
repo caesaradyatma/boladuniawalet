@@ -1,5 +1,5 @@
 #products{
-		padding: 50px;
+	padding: 50px;
 }
 
 #products .container {
@@ -55,16 +55,16 @@
 .pic1{
 	/* width:400px;
 	height:217px; */
-  height:200px;
-  width:200px;
-  margin-bottom:100px;
+	height:200px;
+	width:200px;
+	margin-bottom:100px;
 	background: url(http://placehold.it/200x200) no-repeat;
 }
 .text1{
 	/* width:340px;
 	height:217px; */
-  width:200px;
-  height:200px;
+	width:200px;
+	height:200px;
 	background:#FFF;
 	opacity:0;
 }
@@ -81,7 +81,7 @@
 }
 
 .bg-yellow {
-	background-color: #FFF105 !important;
+	background-color: rgba(255, 243, 5, 0.85) !important;
 }
 
 hr {
@@ -94,19 +94,24 @@ hr {
 }
 
 .scrolled {
-	background: white !important;
+	background: rgba(255, 255, 255, 0.85) !important;
 }
 
 #about {
 	height: 100vh;
-	background-color: #FFA366;
+	/* background-color: #FFA366; */
 	/* background-color: #FFC600; */
+	background: url('../img/Pudding/bg1-min.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
 }
 
 #about .container {
-	background-color: #FFF105;
+	background-color: rgba(255, 243, 5, 0.85);
 	padding: 5%;
-	margin-top:20px;
+	
 }
 
 .section-title {
@@ -125,10 +130,32 @@ hr {
 
 #contact {
 	height:100vh;
+	/* background-color: #FFA366; */
+	background: url('../img/Pudding/bg2-min.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
 }
 
 #contact .container {
 	padding: 5%;
+	background-color: rgba(255, 255, 255, 0.7);
 }
 
+#carousel-modal .carousel-item {
+	height: 20% !important;
+}
 
+.logo {
+	height:50px !important;
+	
+}
+
+.carousel-control-next-icon {
+	background-image: url('../img/logo/arrow-point-to-right.png') !important;
+}
+
+.carousel-control-prev-icon {
+	background-image: url('../img/logo/arrow-point-to-left.png') !important;
+}

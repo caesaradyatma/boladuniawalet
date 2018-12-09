@@ -52,39 +52,22 @@
       <div class="container">
         <h1 class="section-title">about us</h1>
         <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        <p>PT. Bola Dunia Walet is one of the leading company producing Agar Powder in Indonesia’s food industry. Established in 1993, our initial purpose has always been to expand and improve the Agar-Agar industry in Indonesia.</p>
+        <p>Our Company’s Agar-agar is derived from seaweed which were cultivated from various fertile sea-farms in Indonesia. Infamous for its good source of Calcium, Iron, and Fibre, our products may be used to enjoy drinks, confectionaries, desserts, and other daily products such as rice.</p>
+        <p>With over 25 years of experience, we have a vision of being a notable company in the industry, with missions to provide the best quality products and services, and ensure excellent satisfaction of the market. Our company aims to contribute to the vast economic growth both in the Indonesian and international market by providing employment opportunities and utilising Indonesian resources while progressively promoting the development of ‘Green Economy’.</p>
       </div>
     </section>
     <section class="py-5" id="products">
       <div class="container">
-        <!-- modal  -->
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h3 id="modal-title"></h3>
-              </div>
-              <div class="modal-body">
-                <img src="img/Product/product1.jpg" alt="" class="img-fluid modal-img">
-                <p id="product-desc">
-                  
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end modal -->
         <div class="row">
           <div class="col-sm-12">
             <h1 class="section-title-inv">products</h1>
             <hr>
           </div>
+          @include('modals.productdetails')
           @foreach ($products as $product)
             <div class="col-sm-4 grow">
-              <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" data-name="{{$product->name}}">
+              <a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" data-name="{{$product->name}}" data-id="{{$product->id}}" v-on:click="showModal($event)">
                 <img class="product-img" src="{{asset('img/Product/'.$product->images_id.'-min.jpg')}}" alt="Card image cap">
                 <div class="overlay">
                   <div class="hover-caption">
@@ -100,16 +83,16 @@
     </section>
     <section class="py-5" id="contact">
       <div class="container">
-        <h1 class="section-title-inv">Contact Us</h1>
+        <h1 class="section-title-inv">contact us</h1>
         <p>admin@boladuniawalet.com</p>
-        <form>
+        <form action="/contact" method="POST">
           <table class="table">
             <tr>
               <th>
                 <label>Email</label>
               </th>
               <td>
-                <input type="email" class="form-control">
+                <input type="email" name="email" class="form-control">
               </td>
             </tr>
             <tr>
@@ -117,7 +100,7 @@
                 <label>Message</label>
               </th>
               <td>
-                <textarea></textarea class="form-control">
+                <textarea class="form-control" name="message"></textarea>
               </td>
             </tr>
             <tr>
@@ -125,7 +108,8 @@
                 <label>Phone Number</label>
               </th>
               <td>
-                <input type="text" class="form-control">
+                <input type="text" name="phone" class="form-control">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
               </td>
             </tr>
             <tr>
@@ -141,32 +125,39 @@
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; boladuniawalet.co.id 2018</p>
+        <p class="m-0 text-center text-white">Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
       </div>
       <!-- /.container -->
     </footer>
 @endsection
 @section('scripts')
     <script>
-      $('.bd-example-modal-lg').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget) // Button that triggered the modal
-          var recipient = button.data('whatever') // Extract info from data-* attributes
-          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-          var descproduct1 = "lalalalyeyeyeye"
-          var descproduct2 = "wuouowuwouwouwo"
-          var modal = $(this)
-          modal.find('#modal-title').text(recipient)
+      var products = {!! $products !!};
+      $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $(".nav-link").on('click', function(event) {
 
-          if(recipient == "Product 1") {
-            modal.find('#product-desc').html('<center>'+descproduct1+'</center>')
-            console.log('wew')
-          }
-          else if (recipient == "Product 2") {
-            modal.find('#product-desc').html('<center>' + descproduct2 + '</center>')
-            console.log('wiu') 
-          }
-          
-        })
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function(){
+        
+              // Add hash (#) to URL when done scrolling (default click behavior)
+              window.location.hash = hash;
+            });
+          } // End if
+        });
+      });
+
       //change color on scroll
       $(window).scroll(function(){
       $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
