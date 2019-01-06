@@ -84,41 +84,43 @@
     <section class="py-5" id="contact">
       <div class="container">
         <h1 class="section-title-inv">contact us</h1>
-        <p>admin@boladuniawalet.com</p>
-        <form action="/contact" method="POST">
-          <table class="table">
-            <tr>
-              <th>
-                <label>Email</label>
-              </th>
-              <td>
-                <input type="email" name="email" class="form-control">
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <label>Message</label>
-              </th>
-              <td>
-                <textarea class="form-control" name="message"></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th>
-                <label>Phone Number</label>
-              </th>
-              <td>
-                <input type="text" name="phone" class="form-control">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <input type="submit" class="form-control btn btn-primary">
-              </td>
-            </tr>
-          </table>
-        </form>
+        <p>admin@boladuniawalet.com<p/>
+        <div> <!-- buat display none disini -->
+          <form action="/contact" method="POST">
+            <table class="table">
+              <tr>
+                <th>
+                  <label>Email</label>
+                </th>
+                <td>
+                  <input type="email" name="email" class="form-control">
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <label>Message</label>
+                </th>
+                <td>
+                  <textarea class="form-control" name="message"></textarea>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <label>Phone Number</label>
+                </th>
+                <td>
+                  <input type="text" name="phone" class="form-control">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="submit" class="form-control btn btn-primary">
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
       </div>
     </section>
     <!-- Footer -->

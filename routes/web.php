@@ -11,5 +11,9 @@
 |
 */
 
-Route::get('/','HomeController@index');
+Route::get('/','HomeController@index')->name('home');
 Route::post('/contact','HomeController@sendMessage');
+Route::get('/backoffice','BoController@index');
+Route::get('/backoffice/messages','BoController@messages')->name('bo_messages');
+Auth::routes();
+

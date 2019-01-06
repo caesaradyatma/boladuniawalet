@@ -17,7 +17,8 @@ var app = new Vue ({
             this.product_image2 = "/img/Product/" + products[id - 1].images_id + "_2sides-min.jpg";
             this.product_image3 = "/img/Product/" + products[id - 1].images_id + "_3sides-min.jpg";
             this.product_name = name
-            this.product_desc = products[id - 1].description
+            //this.product_desc = products[id - 1].description
+            this.product_desc = ""
         },
 
     }
