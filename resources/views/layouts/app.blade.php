@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
+        <title>Bola Dunia Walet</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Bola Dunia Walet</title>
+        <meta name="description" content="PT. Bola Dunia Walet is one of the leading company producing Agar Powder in Indonesia’s food industry. Established in 1993, our initial purpose has always been to expand and improve the Agar-Agar industry in Indonesia.">
+        <link rel="canonical" href="http://boladuniawalet.com" >
+        <meta name="robots" content="index, follow" />
+        <link rel="icon" href="{{ asset('img/logo/logo.png') }}" sizes="16x16" type="image/png">
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">

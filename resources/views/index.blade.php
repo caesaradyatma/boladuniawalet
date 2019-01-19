@@ -11,29 +11,29 @@
             <div class="carousel-inner" role="listbox">
             <!-- Slide One - Set the background image for this slide in the line below -->
             <div class="carousel-item active" style="background-image: url('{{ asset('img/Product/banyak2-min.jpg') }}');">
-                <div class="carousel-caption d-none d-md-block">
-                <h3>First Slide</h3>
-                <p>This is a description for the first slide.</p>
+                <div class="carousel-caption d-none d-md-block hero-caption">
+                <h3>Agar - Agar Powder Products</h3>
+                <p>Our assortment of products</p>
                 </div>
             </div>
             <!-- Slide Two - Set the background image for this slide in the line below -->
             <div class="carousel-item" style="background-image: url('{{ asset('img/Pudding/brown-slide.jpg' )}}');">
-                <div class="carousel-caption d-none d-md-block">
-                <h3>Second Slide</h3>
-                <p>This is a description for the second slide.</p>
+                <div class="carousel-caption d-none d-md-block hero-caption">
+                <h3>Biscuit Pudding</h3>
+                <p>Made with "Cap Bola Dunia" Agar Powder</p>
                 </div>
             </div>
             <!-- Slide Three - Set the background image for this slide in the line below -->
             <div class="carousel-item" style="background-image: url('{{ asset('img/Powder/powderslide-min.jpg' )}}');">
-                <div class="carousel-caption d-none d-md-block">
-                <h3>Third Slide</h3>
-                <p>This is a description for the third slide.</p>
+                <div class="carousel-caption d-none d-md-block hero-caption">
+                <h3>Our Agar Powder</h3>
+                <p>Made from High Quality Selected Seaweed</p>
                 </div>
             </div>
             <div class="carousel-item" style="background-image: url('{{ asset('img/Pudding/bright-slide.jpg' )}}');">
-                <div class="carousel-caption d-none d-md-block">
-                <h3>Fourth Slide</h3>
-                <p>This is a description for the fourth slide.</p>
+                <div class="carousel-caption d-none d-md-block hero-caption">
+                <h3>Flower Art Pudding</h3>
+                <p>Express Your Creativity with Double Swallow Sun Agar Powder</p>
                 </div>
             </div>
             </div>
@@ -48,7 +48,8 @@
         </div>
     </header>
     <!-- Page Content -->
-    <section class="py-5" id="about">
+    
+    <section class="py-5 bg-image-full" id="about">
       <div class="container">
         <h1 class="section-title">about us</h1>
         <hr>
@@ -84,7 +85,10 @@
     <section class="py-5" id="contact">
       <div class="container">
         <h1 class="section-title-inv">contact us</h1>
-        <p>admin@boladuniawalet.com<p/>
+        <center>
+          <p>We aim to grow into a better company since 1993 to offer the best products for the market. For business inquiries or other inquiries, please fill out the form below</p>
+          <p style="display:none;">adm@boladuniawalet.com<p/>
+        </center>
         <div> <!-- buat display none disini -->
           <form action="/contact" method="POST">
             <table class="table">
@@ -126,8 +130,10 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; boladuniawalet.co.id 2018</p>
-        <p class="m-0 text-center text-white">Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
+        <p class="m-0 text-center text-white">If there are any questions or inquiries please reach us through phone or email below</p>
+        <p class="m-0 text-center text-white">+6221 633 5550 | adm@boladuniawalet.com</p>
+        <p class="m-0 text-center text-white">Copyright &copy; boladuniawalet.com 2018 | Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
+        <p class="m-0 text-center text-white"></p>
       </div>
       <!-- /.container -->
     </footer>
